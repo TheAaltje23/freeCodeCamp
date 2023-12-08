@@ -1,0 +1,93 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    background: #000;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 1.6rem;
+    color: #F1F1F1;
+    margin: 0;
+}
+
+.container {
+    background: #161616;
+    border-radius: 5px;
+    padding: 20px 0;
+    margin: 30px 10px;
+}
+
+header {
+    padding-top: 20px;
+}
+
+#title,
+#description {
+    text-align: center;
+    padding: 0 0 20px;
+    margin: 0;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+#img-div {
+    margin: 15px 15px;
+    background-color: #c6aa80;
+    border-radius: 5px;
+}
+
+#image {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+#img-caption {
+    text-align: center;
+    padding: 20px 0;
+    color: #161616;
+    font-style: italic;
+}
+
+#tribute-info {
+    text-align: center;
+    padding-top: 20px;
+}
+
+ul {
+    max-width: 550px;
+    list-style-type: disc;
+    display: inline-block;
+}
+
+li {
+    text-align: left;
+    padding: 15px 0;
+}
+
+.year {
+    font-weight: bold;
+    color: #C6AA80;
+}
+
+.quote {
+    text-align: left;
+    max-width: 550px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    font-style: italic;
+}
+
+#link {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 0 20px;
+}

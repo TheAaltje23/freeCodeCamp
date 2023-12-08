@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200i,400&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-image: linear-gradient(115deg, rgba(58, 58, 158, 0.8), rgba(255, 24, 1, 0.7)), url(https://www.hollywoodreporter.com/wp-content/uploads/2023/08/LVGP-Paddock-and-East-Harmon-Zone-credit-Las-Vegas-Grand-H-2023.jpg?w=1296&h=730&crop=1&resize=1000%2C563);
+  background-size: cover;
+  margin: 0;
+}
+
+#title {
+  color: white;
+  text-align: center;
+  text-shadow: 0 0 5px black;
+  margin: 50px 0 0 0;
+}
+
+#description {
+  color: white;
+  font-style: italic;
+  text-align: center;
+  text-shadow: 0 0 10px black;
+  margin: 0 0 25px 0;
+}
+
+.form-container {
+  background-color: rgba(27, 27, 50, 0.8);
+  color: white;
+  min-width: 300px;
+  width: 60vw;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px 30px;
+  border-radius: 10px;
+}
+
+label,
+legend {
+  text-shadow: 0 0 2px black;
+  font-size: 16px;
+  display: block;
+  padding-left: 0;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  margin: 10px 0 20px 0;
+  padding: 10px 10px;
+  border-radius: 4px;
+  border: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid rgba(58, 58, 158, 0.7);
+}
+
+.brackets {
+  font-size: 12px;
+  display: inline;
+}
+
+::placeholder,
+select {
+  color: #495057;
+  font-family: 'Poppins', sans-serif;
+}
+
+.radio input,
+.checkbox input {
+  display: inline;
+  width: unset;
+  margin: 0 0.5em 0 0;
+  outline: unset;
+}
+
+fieldset {
+  border: none;
+  padding-left: 0;
+  margin-bottom: 5px;
+}
+
+#submit {
+  width: 100%;
+  color: white;
+  background-color: #37af65;
+  padding: 10px 10px;
+  border: 1px solid #37af65;
+  border-radius: 2px;
+  cursor: pointer;
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="my-survey-form.css">
+  <title>MFR League: Survey</title>
+</head>
+
+<body>
+
+  <!--HEADER-->
+  <header id="header">
+    <h1 id="title">MFR League Survey Form</h1>
+    <p id="description">Answer the questions below to apply for MFR League</p>
+  </header>
+
+  <!--FORM-->
+  <div class="form-container">
+    <form id="survey-form" action="https://www.linkedin.com/in/alexander-van-noordenne/">
+
+      <!--OPEN QUESTIONS AND DROPDOWN-->
+      <fieldset>
+        <label id="name-label" for="name">Name<input id="name" type="text" placeholder="Enter your name"
+            required></label>
+        <label id="email-label" for="email">Email<input id="email" type="email" placeholder="Enter your Email"
+            required></label>
+        <label id="number-label" for="number">Age <p class="brackets">(optional)</p><input id="number" type="number"
+            placeholder="Age" min="12" max="120" required></label>
+
+        <label for="dropdown">What kind of driver do you want to be next season?
+          <select id="dropdown" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="1">Tier 1 Driver</option>
+            <option value="2">Tier 2 Driver</option>
+            <option value="3">Reserve Driver</option>
+            <option value="4">Casual Driver</option>
+            <option value="5">I want to quit the league</option>
+          </select>
+        </label>
+      </fieldset>
+
+      <!--RADIO-->
+      <fieldset class="radio">
+        <legend>Are you be able to meet the time and date requirements?</legend>
+        <label for="radio-1"><input id="radio-1" type="radio" name="time-date" value="definitely"
+            checked>Definitely</label>
+        <label for="radio-2"><input id="radio-2" type="radio" name="time-date" value="maybe">Maybe</label>
+        <label for="radio-3"><input id="radio-3" type="radio" name="time-date" value="not-sure">Not sure</label>
+      </fieldset>
+
+      <!--SECOND DROPDOWN-->
+      <fieldset>
+        <label for="dropdown">Which of these qualifying formats do you prefer?
+          <select id="dropdown" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="1">No Qualifying</option>
+            <option value="2">One-shot Qualifying</option>
+            <option value="3">Short Qualifying</option>
+            <option value="4">Full Qualifying</option>
+          </select>
+        </label>
+      </fieldset>
+
+      <!--CHECKBOX-->
+      <fieldset class="checkbox">
+        <legend>For which teams would you prefer to drive? <p class="brackets">(Choose 3)</p>
+        </legend>
+        <label for="mercedes"><input id="mercedes" type="checkbox" name="team" value="mercedes">Mercedes</label>
+        <label for="redbull"><input id="redbull" type="checkbox" name="team" value="redbull">Red Bull</label>
+        <label for="mclaren"><input id="mclaren" type="checkbox" name="team" value="mclaren">McLaren</label>
+        <label for="ferrari"><input id="ferrari" type="checkbox" name="team" value="ferrari">Ferrari</label>
+        <label for="astonmartin"><input id="astonmartin" type="checkbox" name="team" value="astonmartin">Aston
+          Martin</label>
+        <label for="haas"><input id="haas" type="checkbox" name="team" value="haas">Haas</label>
+        <label for="alfaromeo"><input id="alfaromeo" type="checkbox" name="team" value="alfaromeo">Alfa Romeo</label>
+        <label for="williams"><input id="williams" type="checkbox" name="team" value="williams">Williams</label>
+        <label for="alpine"><input id="alpine" type="checkbox" name="team" value="alpine">Alpine</label>
+        <label for="alphatauri"><input id="alphatauri" type="checkbox" name="team" value="alphatauri">AlphaTauri</label>
+      </fieldset>
+
+      <!--TEXTAREA-->
+      <fieldset>
+        <label>Any comments or suggestions?<textarea placeholder="Enter your comment here..."></textarea></label>
+      </fieldset>
+
+      <!--BUTTON-->
+      <fieldset>
+        <button id="submit" type="submit" value="Submit">Submit</button>
+      </fieldset>
+
+    </form>
+  </div>
+</body>
+
+</html>
