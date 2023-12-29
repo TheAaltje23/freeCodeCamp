@@ -1,0 +1,27 @@
+function palindrome(str) {
+  // Only alphanumeric characters and lowercased
+  const regex = /[a-zA-Z0-9]/g;
+  const arr = str.toLowerCase().match(regex);
+  const length = arr.length;
+
+  // Check even words
+  if (length % 2 == 0) {
+    const leftSide = arr.slice(0, length / 2).join('');
+    const rightSide = arr.slice(length / 2).reverse().join('');
+    if (leftSide === rightSide) {
+      return true;
+    } else {
+      return false;
+    }
+    // Check uneven words
+  } else {
+    const leftSide = arr.slice(0, length / 2 + 1).join('');
+    const rightSide = arr.slice(length / 2).reverse().join('');
+    if (leftSide === rightSide) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+}
+palindrome("eye");
