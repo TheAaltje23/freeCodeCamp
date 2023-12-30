@@ -4,11 +4,7 @@ const resultDiv = document.getElementById("result");
 const resultP = document.getElementById("result-p");
 
 const checkInput = () => {
-    if (textInput.value === "") {
-        alert("Please input a value");
-    } else {
-        output();
-    }
+    textInput.value === "" ? alert("Please input a value") : output();
 }
 
 const output = () => {
