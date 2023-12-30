@@ -1,0 +1,224 @@
+** start of undefined **
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome Checker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <main>
+        <div id="container">
+
+            <section id="logo-container">
+                <img id="logo" src="https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg" alt="freeCodeCamp logo"/>
+            </section>
+
+            <section id="title-container">
+                <h1 id="title">Is it a Palindrome?</h1>
+            </section>
+
+            <section id="input-container">
+                <label id="text-input-label" for="text-input">Enter in text to check for a palindrome:</label>
+                <input id="text-input" type="text"></input>
+                <button id="check-btn">Check</button>
+                <div id="result" class="hidden">
+                    <p id="result-p"></p>
+                </div>
+            </section>
+
+            <section id="info-container">
+                <span id="emoji">💡</span>
+                <dfn id="info-dfn">A <span id="palindrome">palindrome</span> is a word or sentence that's spelled the same way both forward and backward, ignoring
+                    punctuation, case, and spacing.</dfn>
+            </section>
+
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+** end of undefined **
+
+** start of undefined **
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #0A0A23;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #FFF;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#logo-container {
+    width: min(100vw, 275px);
+}
+
+#logo {
+    width: 100%;
+}
+
+#title-container {
+    width: min(100vw, 500px);
+    margin-top: 30px;
+}
+
+#title {
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+#input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: min(100vw, 450px);
+    background-color: #FFF;
+    color: #000;
+    min-height: 100px;
+    border-radius: 20px;
+    padding: 20px 0;
+    margin-top: 35px;
+    box-shadow: 0px 6px 6px #002EAD;
+}
+
+#text-input-label {
+    margin-bottom: 35px;
+}
+
+#text-input {
+    width: 60%;
+    padding: 5px 2px;
+    text-align: center;
+    border: none;
+    border-bottom: 2px solid #5A01A7;
+    font-size: 1.2rem;
+}
+
+#check-btn {
+    background-color: #5A01A7;
+    border: none;
+    color: #FFF;
+    padding: 10px 30px;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+#info-container {
+    width: min(100vw, 450px);
+    background-color: #00471B;
+    color: #FFF;
+    min-height: 100px;
+    border-radius: 20px;
+    padding: 20px 20px;
+    margin-top: 35px;
+    display: flex;
+}
+
+#emoji {
+    font-size: 1.3rem;
+}
+
+#info-dfn {
+    font-style: normal;
+    font-size: 1.3rem;
+    text-align: center;
+    padding: 0;
+}
+
+#palindrome {
+    font-style: italic;
+}
+
+.hidden {
+    display: none;
+}
+
+#result {
+    margin-top: 20px;
+}
+
+#result-p {
+    font-size: 1.3rem;
+}
+
+** end of undefined **
+
+** start of undefined **
+
+const checkButton = document.getElementById("check-btn");
+const textInput = document.getElementById("text-input");
+const resultDiv = document.getElementById("result");
+const resultP = document.getElementById("result-p");
+
+const checkInput = () => {
+    if (textInput.value === "") {
+        alert("Please input a value");
+    } else {
+        output();
+    }
+}
+
+const output = () => {
+    if (palindrome(textInput.value) === true) {
+        resultDiv.classList.remove("hidden");
+        resultP.innerHTML = `<strong>${textInput.value}</strong> is a palindrome`;
+    } else {
+        resultDiv.classList.remove("hidden");
+        resultP.innerHTML = `<strong>${textInput.value}</strong> is not a palindrome`;
+    }
+}
+
+const palindrome = (str) => {
+    // Only alphanumeric characters and lowercased
+    const regex = /[a-zA-Z0-9]/g;
+    const arr = str.toLowerCase().match(regex);
+    const length = arr.length;
+
+    // Check even words
+    if (length % 2 == 0) {
+        const leftSide = arr.slice(0, length / 2).join('');
+        const rightSide = arr.slice(length / 2).reverse().join('');
+        if (leftSide === rightSide) {
+            return true;
+        } else {
+            return false;
+        }
+        // Check uneven words
+    } else {
+        const leftSide = arr.slice(0, length / 2 + 1).join('');
+        const rightSide = arr.slice(length / 2).reverse().join('');
+        if (leftSide === rightSide) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+
+checkButton.addEventListener("click", checkInput);
+
+** end of undefined **
+
