@@ -1,0 +1,68 @@
+function convertToRoman(num) {
+  let result = "";
+
+  const romanNumArr = [
+    {
+      roman: "M",
+      numeral: 1000
+    },
+    {
+      roman: "CM",
+      numeral: 900
+    },
+    {
+      roman: "D",
+      numeral: 500
+    },
+    {
+      roman: "CD",
+      numeral: 400
+    },
+    {
+      roman: "C",
+      numeral: 100
+    },
+    {
+      roman: "XC",
+      numeral: 90
+    },
+    {
+      roman: "L",
+      numeral: 50
+    },
+    {
+      roman: "XL",
+      numeral: 40
+    },
+    {
+      roman: "X",
+      numeral: 10
+    },
+    {
+      roman: "IX",
+      numeral: 9
+    },
+    {
+      roman: "V",
+      numeral: 5
+    },
+    {
+      roman: "IV",
+      numeral: 4
+    },
+    {
+      roman: "I",
+      numeral: 1
+    },
+  ];
+
+  romanNumArr.forEach((obj) => {
+    while (num >= obj.numeral) {
+      result += (obj.roman);
+      num -= obj.numeral;
+    }
+  });
+  
+  return result;
+}
+convertToRoman(36);

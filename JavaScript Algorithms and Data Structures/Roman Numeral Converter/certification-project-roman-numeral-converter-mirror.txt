@@ -1,0 +1,258 @@
+** start of undefined **
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roman Numeral Converter</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Castoro+Titling&amp;display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        <div id="container">
+
+            <section id="logo-container">
+                <img id="logo" src="https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg"
+                    alt="freeCodeCamp logo">
+            </section>
+
+            <section id="title-container">
+                <h1 id="title">Roman Numeral Converter</h1>
+            </section>
+
+            <section id="converter-container">
+                <label id="label" for="number">Enter a Number:</label>
+                <input id="number" type="number"></input>
+                <button id="convert-btn">Convert</button>
+            </section>
+
+            <div id="output" class="hidden output-correct">
+                <p id="output-text"></p>
+            </div>
+
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+** end of undefined **
+
+** start of undefined **
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #1B1B32;
+    color: #F5F6F7;
+    font-family: 'Lato', Helvetica, Arial, sans-serif;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#logo-container {
+    width: min(100vw, 275px);
+    margin-top: 50px;
+    display: flex;
+}
+
+#logo {
+    width: 100%;
+}
+
+#title-container {
+    width: min(100vw, 350px);
+    margin-top: 40px;
+    font-family: 'Castoro Titling', cursive;
+}
+
+#title {
+    font-size: 2.2rem;
+    text-align: center;
+}
+
+#converter-container {
+    background-color: #3B3B4F;
+    border: 3px solid #FFF;
+    margin-top: 20px;
+    width: min(100vw, 500px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#label {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 30px 0 20px 0;
+}
+
+#number {
+    background-color: #0A0A23;
+    color: #FFF;
+    padding: 5px 10px;
+    border: 1px solid #FFF;
+    outline: none;
+    font-size: 2.5rem;
+    width: 80%
+}
+
+#convert-btn {
+    margin: 30px 0;
+    width: 80%;
+    padding: 10px;
+    background: linear-gradient(#FECC4C, #FFAC33);
+    border: 3px solid #FEAC32;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+#output {
+    width: min(100vw, 500px);
+    margin-top: 30px;
+}
+
+#output-text {
+    text-align: center;
+    font-size: 2.2rem;
+    padding: 10px;
+}
+
+.output-correct {
+    background-color: #3B3B4F;
+    border: 3px solid #FFF;
+}
+
+.output-error {
+    background-color: #FFADAD;
+    border: 3px solid #850000;
+    color: #850000;
+}
+
+.hidden {
+    display: none;
+}
+
+** end of undefined **
+
+** start of undefined **
+
+const input = document.getElementById("number");
+const convertBtn = document.getElementById("convert-btn");
+const output = document.getElementById('output');
+const outputText = document.getElementById("output-text");
+
+const checkInput = () => {
+    if (input.value === "") {
+        output.classList.remove("hidden", "output-correct");
+        output.classList.add("output-error");
+        outputText.textContent = "Please enter a valid number";
+    } else if (input.value < 1) {
+        output.classList.remove("hidden", "output-correct");
+        output.classList.add("output-error");
+        outputText.textContent = "Please enter a number greater than or equal to 1";
+    } else if (input.value > 3999) {
+        output.classList.remove("hidden", "output-correct");
+        output.classList.add("output-error");
+        outputText.textContent = "Please enter a number less than or equal to 3999";
+    } else {
+        output.classList.remove("hidden", "output-error");
+        output.classList.add("output-correct");
+        outputText.textContent = `${convertToRoman(input.value)}`;
+    }
+};
+
+function convertToRoman(num) {
+    let result = "";
+
+    const romanNumArr = [
+        {
+            roman: "M",
+            numeral: 1000
+        },
+        {
+            roman: "CM",
+            numeral: 900
+        },
+        {
+            roman: "D",
+            numeral: 500
+        },
+        {
+            roman: "CD",
+            numeral: 400
+        },
+        {
+            roman: "C",
+            numeral: 100
+        },
+        {
+            roman: "XC",
+            numeral: 90
+        },
+        {
+            roman: "L",
+            numeral: 50
+        },
+        {
+            roman: "XL",
+            numeral: 40
+        },
+        {
+            roman: "X",
+            numeral: 10
+        },
+        {
+            roman: "IX",
+            numeral: 9
+        },
+        {
+            roman: "V",
+            numeral: 5
+        },
+        {
+            roman: "IV",
+            numeral: 4
+        },
+        {
+            roman: "I",
+            numeral: 1
+        },
+    ];
+
+    romanNumArr.forEach((obj) => {
+        while (num >= obj.numeral) {
+            result += (obj.roman);
+            num -= obj.numeral;
+        }
+    });
+
+    return result;
+};
+
+input.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+        checkInput();
+    }
+});
+convertBtn.addEventListener("click", checkInput);
+
+** end of undefined **
+
