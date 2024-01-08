@@ -1,0 +1,21 @@
+function rot13(str) {
+  const toCode = str
+    .split('')
+    .map(char => {
+      const isLetter = char >= "A" && char <= "Z";
+
+      if (isLetter) {
+        let shiftedCode = char.charCodeAt(0) - 13;
+        if (shiftedCode < "A".charCodeAt(0)) {
+          shiftedCode += 26;
+        };
+        return String.fromCharCode(shiftedCode);
+      } else {
+        return char;
+      };
+    })
+    .join('');
+  return toCode;
+};
+
+rot13("SERR PBQR PNZC");
