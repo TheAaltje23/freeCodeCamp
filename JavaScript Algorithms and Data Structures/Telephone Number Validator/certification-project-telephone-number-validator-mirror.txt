@@ -1,0 +1,232 @@
+** start of undefined **
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telephone Number Validator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <main id="container">
+
+        <section id="logo-container">
+            <img id="logo" src="https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg"
+                alt="freeCodeCamp logo">
+        </section>
+
+        <section id="title-container">
+            <h1 id="title">Telephone Number Validator</h1>
+        </section>
+
+        <section id="phone-container">
+            <div id="phone">
+                <div id="phone-camera-container">
+                    <div id="phone-camera"></div>
+                </div>
+                <div id="phone-screen">
+                    <label id="label" for="user-input">Enter a Phone Number:</label>
+                    <input id="user-input" type="tel"></input>
+                    <div id="results-div"></div>
+                </div>
+                <div id="phone-buttons">
+                    <button id="check-btn" class="btn" type="button">Check</button>
+                    <button id="clear-btn" class="btn" type="button">Clear</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+** end of undefined **
+
+** start of undefined **
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #3B3B4F;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #0A0A23;
+}
+
+#container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#logo-container {
+    width: min(100vw, 275px);
+    margin-top: 40px;
+    display: flex;
+}
+
+#logo {
+    width: 100%;
+}
+
+#title-container {
+    width: min(100vw, 450px);
+    margin-top: 40px;
+}
+
+#title {
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+}
+
+#phone-container {
+    margin-top: 40px;
+    width: min(100vw, 450px);
+    display: flex;
+    justify-content: center;
+}
+
+#phone {
+    width: 250px;
+    height: 450px;
+    background-color: #000;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px;
+}
+
+#phone-camera-container {
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#phone-camera {
+    background-color: #FFF;
+    height: 24%;
+    width: 5%;
+    border-radius: 50px;
+}
+
+#phone-screen {
+    background-color: #DFDFE2;
+    height: 80%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#label {
+    margin-top: 10px;
+    text-align: center;
+}
+
+#user-input {
+    margin-top: 10px;
+    text-align: center;
+    width: 90%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #000;
+    font-size: 1.1rem;
+}
+
+#results-div {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+.results-text {
+    padding: 10px 5px;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+#phone-buttons {
+    height: 10%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.btn {
+    height: 60%;
+    width: 40%;
+    font-size: 1.1rem;
+    background-image: linear-gradient(#FFF, #928D86);
+    border-color: #FFF;
+    border-width: 3px;
+    cursor: pointer;
+}
+
+** end of undefined **
+
+** start of undefined **
+
+const check = document.getElementById('check-btn');
+const clear = document.getElementById('clear-btn');
+const userInput = document.getElementById('user-input');
+const result = document.getElementById('results-div');
+
+// Check logic
+const checkInput = () => {
+    const par = document.createElement('p');
+    par.className = 'results-text';
+
+    if (userInput.value === "") {
+        alert('Please provide a phone number');
+        return;
+    } else if (telephoneCheck(userInput.value)) {
+        par.textContent = `Valid US number: ${userInput.value}`;
+        par.style.color = '#00471B';
+        userInput.value = "";
+    } else {
+        par.textContent += `Invalid US number: ${userInput.value}`;
+        par.style.color = '#4D3800';
+        userInput.value = "";
+    };
+    result.appendChild(par);
+};
+
+// Clear logic
+const clearInput = () => {
+    while (result.firstChild) {
+        result.removeChild(result.firstChild);
+    };
+};
+
+// Regex
+const telephoneCheck = str => {
+    const regex = /^(?:1|1\s)?(?:\([0-9]{3}\)|[0-9]{3})(?:-|\s)?(?:[0-9]{3})(?:-|\s)?(?:[0-9]{4})$/;
+    return regex.test(str);
+}
+
+// Event Listeners
+userInput.addEventListener("keydown", e => {
+    if (e.key === "Enter") {
+        checkInput();
+    };
+});
+check.addEventListener("click", checkInput);
+clear.addEventListener("click", clearInput);
+
+** end of undefined **
+
