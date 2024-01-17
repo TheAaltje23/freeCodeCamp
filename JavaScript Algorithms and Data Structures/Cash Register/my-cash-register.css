@@ -1,0 +1,204 @@
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(to right, rgb(182, 244, 146), rgb(51, 139, 147));
+    color: #DFDFE2;
+}
+
+#container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Logo */
+#logo-container {
+    width: min(100vw, 275px);
+    display: flex;
+    margin-top: 40px;
+}
+
+#logo {
+    width: 100%;
+}
+
+/* Title */
+#title-container {
+    width: min(100vw, 500px);
+    margin-top: 40px;
+    font-size: 1.7rem;
+    text-align: center;
+}
+
+#title {
+    color: #0A0A23;
+}
+
+/* Change due */
+#change-due-container {
+    width: min(100vw, 500px);
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#change-due {
+    font-size: 1.2rem;
+    color: #0A0A23;
+}
+
+/* Input */
+#input-container {
+    width: min(100vw, 500px);
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#label {
+    color: #0A0A23;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+#cash {
+    margin-top: 10px;
+    width: 45%;
+    padding: 5px 10px;
+    font-size: 1rem;
+    color: #0A0A23;
+}
+
+#purchase-btn {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    padding: 10px;
+    font-weight: bold;
+    color: #99C9FF;
+    background-color: #0A0A23;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#purchase-btn:hover {
+    color: #0A0A23;
+    background-color: #99C9FF;
+}
+
+#purchase-btn:focus {
+    outline: none;
+}
+
+
+/* Register */
+#register-container {
+    margin-top: 50px;
+    width: min(100vw, 500px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#register-top {
+    background-color: #0A0A23;
+    width: 40%;
+    height: 40px;
+    margin-right: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#total {
+    background-color: #FFF;
+    color: #0A0A23;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 90%;
+    height: 60%;
+}
+
+#register-square {
+    background-color: #0A0A23;
+    width: 40px;
+    height: 40px;
+    margin-right: 150px;
+}
+
+#register-middle {
+    width: 320px;
+    height: 250px;
+    background-color: #0A0A23;
+    border-radius: 35px 35px 0 0;
+    position: relative;
+}
+
+#btn-container-middle {
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 20%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3px;
+}
+
+.btn-middle {
+    width: 20px;
+    height: 20px;
+    background-color: #99C9FF;
+    border-radius: 3px;
+}
+
+#cid-middle {
+    margin-top: 20px;
+    margin-left: 20px;
+    height: 85%;
+    width: 50%;
+    background-color: #FFF;
+    position: absolute;
+    top: 0;
+    right: 20px;
+    padding: 10px;
+}
+
+#cid-middle p:first-child {
+    font-weight: bold;
+}
+
+#cid-middle p {
+    color: #000;
+    font-size: 0.9rem;
+    margin-bottom: 2px;
+}
+
+#register-bottom {
+    margin-top: 10px;
+    width: 320px;
+    height: 50px;
+    background-color: #0A0A23;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#register-bottom-button {
+    width: 20px;
+    height: 20px;
+    background-color: #99C9FF;
+    border-radius: 50%;
+}
+
+.hidden {
+    display: none !important;
+}

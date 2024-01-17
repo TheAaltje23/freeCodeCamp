@@ -1,0 +1,426 @@
+** start of undefined **
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cash Register</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <main id="container">
+
+        <section id="logo-container">
+            <img id="logo" src="https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg"
+                alt="freeCodeCamp logo">
+        </section>
+
+        <section id="title-container">
+            <h1 id="title">Cash Register Project</h1>
+        </section>
+
+        <section id="change-due-container">
+            <div id="change-due"></div>
+        </section>
+
+        <section id="input-container">
+            <label id="label" for="cash">Enter cash from customer:</label>
+            <input id="cash" type="number"></input>
+            <button id="purchase-btn" type="button">Purchase</button>
+        </section>
+
+        <section id="register-container">
+
+            <div id="register-top">
+                <p id="total">Total: 3.26</p>
+            </div>
+
+            <div id="register-square"></div>
+
+            <div id="register-middle">
+                <div id="btn-container-middle">
+                    <div class="btn-middle"></div>
+                    <div class="btn-middle"></div>
+                    <div class="btn-middle"></div>
+                    <div class="btn-middle"></div>
+                    <div class="btn-middle"></div>
+                    <div class="btn-middle"></div>
+                    <div class="btn-middle"></div>
+                    <div class="btn-middle"></div>
+                    <div class="btn-middle"></div>
+                </div>
+                <div id="cid-middle">
+                    <p>Change in drawer:</p>
+                </div>
+            </div>
+
+            <div id="register-bottom">
+                <div id="register-bottom-button"></div>
+            </div>
+
+        </section>
+
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+** end of undefined **
+
+** start of undefined **
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #0A0A23;
+    color: #DFDFE2;
+}
+
+#container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Logo */
+#logo-container {
+    width: min(100vw, 275px);
+    display: flex;
+    margin-top: 40px;
+}
+
+#logo {
+    width: 100%;
+}
+
+/* Title */
+#title-container {
+    width: min(100vw, 500px);
+    margin-top: 40px;
+    font-size: 1.7rem;
+    text-align: center;
+}
+
+/* Change due */
+#change-due-container {
+    width: min(100vw, 500px);
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#change-due {
+    font-size: 1.2rem;
+}
+
+/* Input */
+#input-container {
+    width: min(100vw, 500px);
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#label {
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+#cash {
+    margin-top: 10px;
+    width: 45%;
+    padding: 5px 10px;
+    font-size: 1rem;
+}
+
+#purchase-btn {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    padding: 0 5px;
+    font-weight: bold;
+    background-color: #FEAC32;
+    background-image: linear-gradient(#FECC4C, #FFAC33);
+    border-color: #FEAC32;
+    border-width: 3px;
+    cursor: pointer;
+}
+
+/* Register */
+#register-container {
+    margin-top: 50px;
+    width: min(100vw, 500px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#register-top {
+    background-color: #99C9FF;
+    width: 40%;
+    height: 40px;
+    margin-right: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#total {
+    background-color: #000;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 90%;
+    height: 60%;
+}
+
+#register-square {
+    background-color: #99C9FF;
+    width: 40px;
+    height: 40px;
+    margin-right: 150px;
+}
+
+#register-middle {
+    width: 320px;
+    height: 250px;
+    background-color: #99C9FF;
+    border-radius: 35px 35px 0 0;
+    position: relative;
+}
+
+#btn-container-middle {
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 20%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3px;
+}
+
+.btn-middle {
+    width: 20px;
+    height: 20px;
+    background-color: #000;
+    border-radius: 3px;
+}
+
+#cid-middle {
+    margin-top: 20px;
+    margin-left: 20px;
+    height: 85%;
+    width: 50%;
+    background-color: #FFF;
+    position: absolute;
+    top: 0;
+    right: 20px;
+    padding: 10px;
+}
+
+#cid-middle p:first-child {
+    font-weight: bold;
+}
+
+#cid-middle p {
+    color: #000;
+    font-size: 0.9rem;
+    margin-bottom: 2px;
+}
+
+#register-bottom {
+    margin-top: 10px;
+    width: 320px;
+    height: 50px;
+    background-color: #99C9FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#register-bottom-button {
+    width: 20px;
+    height: 20px;
+    background-color: #000;
+    border-radius: 50%;
+}
+
+** end of undefined **
+
+** start of undefined **
+
+const changeDue = document.getElementById("change-due");
+const cash = document.getElementById("cash");
+const purchaseBtn = document.getElementById("purchase-btn");
+const cidMiddle = document.getElementById("cid-middle");
+
+// Test cases
+let price = 3.26;
+let cid = [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]];
+
+const cidToDom = () => {
+    const cidDetails = cid.map((el) => `${el[0]}: $${el[1]}`);
+    
+    cidDetails.forEach((detail) => {
+        const cidPar = document.createElement('p');
+        cidPar.textContent = detail;
+        cidMiddle.append(cidPar);
+    });
+};
+
+window.onload = cidToDom();
+
+const checkInput = () => {
+    if (cash.value < price) {
+        clearTextContent();
+        alert("Customer does not have enough money to purchase the item");
+        return;
+    } else if (Number(cash.value) === price) {
+        clearTextContent();
+        noChangeNeeded();
+    } else {
+        clearTextContent();
+        checkCashRegister(price, cash.value, cid);
+    };
+    clearInput();
+};
+
+const checkCashRegister = (price, cash, cid) => {
+    const totalCid = cid.reduce((sum, category) => sum + category[1], 0);
+    const resultChange = [];
+    const changeDif = cash - price;
+    let change = cash - price;
+
+    const currency = [
+        {
+            name: "ONE HUNDRED",
+            amount: 100,
+            availability: cid[8][1]
+        },
+        {
+            name: "TWENTY",
+            amount: 20,
+            availability: cid[7][1]
+        },
+        {
+            name: "TEN",
+            amount: 10,
+            availability: cid[6][1]
+        },
+        {
+            name: "FIVE",
+            amount: 5,
+            availability: cid[5][1]
+        },
+        {
+            name: "ONE",
+            amount: 1,
+            availability: cid[4][1]
+        },
+        {
+            name: "QUARTER",
+            amount: 0.25,
+            availability: cid[3][1]
+        },
+        {
+            name: "DIME",
+            amount: 0.1,
+            availability: cid[2][1]
+        },
+        {
+            name: "NICKEL",
+            amount: 0.05,
+            availability: cid[1][1]
+        },
+        {
+            name: "PENNY",
+            amount: 0.01,
+            availability: cid[0][1]
+        }
+    ];
+
+    const result = [
+        {
+            status: "INSUFFICIENT_FUNDS",
+            change: []
+        },
+        {
+            status: "CLOSED",
+            change: cid
+        },
+        {
+            status: "OPEN",
+            change: resultChange
+        }
+    ];
+
+    currency.forEach((obj) => {
+        let count = 0;
+        while (change >= obj.amount && obj.availability > 0) {
+            change = parseFloat(change.toFixed(2));
+            count = parseFloat(count.toFixed(2));
+            count += obj.amount;
+            change -= obj.amount;
+            obj.availability -= obj.amount;
+        };
+        if (count > 0 || change > obj.amount) {
+            resultChange.push([obj.name, count]);
+        };
+    });
+
+    if (totalCid >= changeDif && change === 0) {
+        resultToDom(result[2]);
+    } else if (totalCid === changeDif) {
+        resultToDom(result[1]);
+    } else {
+        resultToDom(result[0]);
+    };
+};
+
+const resultToDom = (result) => {
+    const resultChangeDetails = result.change.map((el) => `${el[0]}: $${el[1]}`);
+
+    const statusPar = document.createElement('p');
+    statusPar.textContent = `Status: ${result.status}`;
+    changeDue.append(statusPar);
+
+    resultChangeDetails.forEach((detail) => {
+        const changePar = document.createElement('p');
+        changePar.textContent = detail;
+        changeDue.append(changePar);
+    });
+};
+
+const clearTextContent = () => {
+    changeDue.textContent = "";
+};
+
+const noChangeNeeded = () => {
+    changeDue.textContent = "No change due - customer paid with exact cash";
+};
+
+const clearInput = () => {
+    cash.value = "";
+};
+
+// Event Listeners
+purchaseBtn.addEventListener("click", checkInput);
+cash.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+        checkInput();
+    };
+});
+
+** end of undefined **
+

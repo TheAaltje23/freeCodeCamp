@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cash Register</title>
+    <link rel="stylesheet" href="my-cash-register.css">
+</head>
+
+<body>
+    <main id="container">
+
+        <section id="logo-container" class="hidden">
+            <img id="logo" src="https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg"
+                alt="freeCodeCamp logo">
+        </section>
+
+        <section id="title-container">
+            <h1 id="title">Cash Register Project</h1>
+        </section>
+
+        <section id="change-due-container">
+            <div id="change-due"></div>
+        </section>
+
+        <section id="input-container">
+            <label id="label" for="cash">Enter cash from customer:</label>
+            <input id="cash" type="number"></input>
+            <button id="purchase-btn" type="button">Purchase</button>
+        </section>
+
+        <section id="register-container">
+
+            <div id="register-top">
+                <p id="total"></p>
+            </div>
+
+            <div id="register-square"></div>
+
+            <div id="register-middle">
+                <div id="btn-container-middle">
+                    <div class="btn-middle"></div>
+                    <div class="btn-middle"></div>
+                    <div class="btn-middle"></div>
+                    <div class="btn-middle"></div>
+                    <div class="btn-middle"></div>
+                    <div class="btn-middle"></div>
+                    <div class="btn-middle"></div>
+                    <div class="btn-middle"></div>
+                    <div class="btn-middle"></div>
+                </div>
+                <div id="cid-middle">
+                    <p>Change in drawer:</p>
+                </div>
+            </div>
+
+            <div id="register-bottom">
+                <div id="register-bottom-button"></div>
+            </div>
+
+        </section>
+
+    </main>
+    <script src="my-cash-register.js"></script>
+</body>
+
+</html>
