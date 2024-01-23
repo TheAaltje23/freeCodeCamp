@@ -1,0 +1,381 @@
+** start of undefined **
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon Search App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <main id="container">
+
+        <section id="logo-container">
+            <img id="logo" src="https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg"
+                alt="freeCodeCamp logo">
+        </section>
+
+        <section id="title-container">
+            <h1 id="title">Pokémon Search App</h1>
+        </section>
+
+        <section id="app-container">
+            <form id="search-container">
+                <label id="search-label" for="search-input">Search for Pokémon Name or ID:</label>
+                <input id="search-input" type="text" required></input>
+                <button id="search-button" type="submit">Search</button>
+            </form>
+            <div id="result-container">
+                <div id="result-container-name">
+                    <p id="pokemon-name"></p>
+                    <p id="pokemon-id"></p>
+                </div>
+                <div id="result-container-size">
+                    <p id="weight"></p>
+                    <p id="height"></p>
+                </div>
+                <div id="result-container-img">
+                    <img id="sprite" src="" alt="">
+                </div>
+                <div id="types">
+                </div>
+            </div>
+            <div id="stats-container">
+                <div id="stats-left">
+                    <span><strong>Base</strong></span>
+                    <span>Hp:</span>
+                    <span>Attack:</span>
+                    <span>Defense:</span>
+                    <span>Sp. Attack:</span>
+                    <span>Sp. Defense:</span>
+                    <span>Speed:</span>
+                </div>
+                <div id="stats-right">
+                    <span><strong>Stats</strong></span>
+                    <span id="hp">0</span>
+                    <span id="attack">0</span>
+                    <span id="defense">0</span>
+                    <span id="special-attack">0</span>
+                    <span id="special-defense">0</span>
+                    <span id="speed">0</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+** end of undefined **
+
+** start of undefined **
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #1B1B32;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#logo-container {
+    width: min(100vw, 300px);
+    display: flex;
+    margin-top: 30px;
+}
+
+#logo {
+    width: 100%;
+}
+
+#title-container {
+    width: min(100vw, 400px);
+    margin-top: 30px;
+    text-align: center;
+    color: #FFF;
+    font-size: 1.3rem;
+}
+
+#app-container {
+    width: min(100vw, 450px);
+    margin: 30px 0;
+    height: 850px;
+    background-color: #F5F6F7;
+    border-radius: 15px;
+    box-shadow: 10px 10px 0px 0px rgba(223, 220, 220, 0.75);
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+#search-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 10px;
+    row-gap: 20px;
+}
+
+#search-label {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#search-input {
+    padding: 10px;
+}
+
+#search-input:focus {
+    outline: 3px solid #198EEE;
+}
+
+#search-button {
+    background-color: #7F21AB;
+    color: #FFF;
+    width: 80px;
+    border: none;
+    border-radius: 20px;
+}
+
+#result-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #F0F1F7;
+    margin-top: 20px;
+    min-height: 350px;
+}
+
+#result-container-name {
+    display: flex;
+    font-size: 1.2rem;
+    gap: 5px;
+    padding: 5px 10px;
+    text-transform: uppercase;
+}
+
+#result-container-size {
+    font-size: 0.9rem;
+    display: flex;
+    gap: 5px;
+    padding: 5px 10px;
+}
+
+#result-container-img {
+    align-self: center;
+    padding: 30px;
+    flex-grow: 1;
+}
+
+#sprite {
+    width: 180px;
+}
+
+#types {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    padding: 5px 10px;
+}
+
+.types {
+    padding: 8px 10px;
+    border-radius: 5px;
+    width: 70px;
+    text-align: center;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+}
+
+#stats-container {
+    color: #FFF;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 10px;
+    width: 100%;
+    margin-top: auto;
+}
+
+#stats-left,
+#stats-right {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+#stats-left span,
+#stats-right span {
+    background-color: #7F21AB;
+    padding: 10px;
+}
+
+/* POKEMON TYPE STYLES */
+.normal {
+    background-color: #b7b7aa;
+}
+
+.fire {
+    background-color: #ff6f52;
+}
+
+.water {
+    background-color: #42a1ff;
+}
+
+.electric {
+    background-color: #fecc33;
+}
+
+.grass {
+    background-color: #78cc55;
+}
+
+.ice {
+    background-color: #66ccfe;
+}
+
+.fighting {
+    background-color: #d3887e;
+}
+
+.poison {
+    background-color: #c68bb7;
+}
+
+.ground {
+    background-color: #dfba52;
+}
+
+.flying {
+    background-color: #8899ff;
+}
+
+.psychic {
+    background-color: #ff66a3;
+}
+
+.bug {
+    background-color: #aabb23;
+}
+
+.rock {
+    background-color: #baaa66;
+}
+
+.ghost {
+    background-color: #9995d0;
+}
+
+.dragon {
+    background-color: #9e93f1;
+}
+
+.dark {
+    background-color: #b59682;
+}
+
+.steel {
+    background-color: #abaabb;
+}
+
+.fairy {
+    background-color: #ed99ed;
+}
+
+** end of undefined **
+
+** start of undefined **
+
+// DOM ELEMENTS
+const searchForm = document.getElementById('search-container');
+const searchInput = document.getElementById('search-input');
+const searchBtn = document.getElementById('search-button');
+const typeContainer = document.getElementById('types');
+
+// POKEMON DATA ELEMENTS
+const pokemonName = document.getElementById('pokemon-name');
+const pokemonId = document.getElementById('pokemon-id');
+const pokemonWeight = document.getElementById('weight');
+const pokemonHeight = document.getElementById('height');
+const pokemonImage = document.getElementById('sprite');
+const pokemonTypes = document.getElementById('types');
+const pokemonHp = document.getElementById('hp');
+const pokemonAttack = document.getElementById('attack');
+const pokemonDefense = document.getElementById('defense');
+const pokemonSpAttack = document.getElementById('special-attack');
+const pokemonSpDefense = document.getElementById('special-defense');
+const pokemonSpeed = document.getElementById('speed');
+
+const fetchData = async () => {
+    const pokemon = `https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/${searchInput.value.toLowerCase()}`;
+    try {
+        const response = await fetch(pokemon);
+        const data = await response.json();
+        renderData(data);
+    } catch (err) {
+        alert('Pokémon not found');
+    };
+};
+
+const checkInput = () => {
+    if (searchInput.value) {
+        fetchData();
+        searchInput.value = '';
+    };
+};
+
+const renderData = (data) => {
+    const { name, id, weight, height, sprites, types, stats } = data;
+    pokemonName.textContent = name;
+    pokemonId.textContent = `#${id}`;
+    pokemonWeight.textContent = `Weight: ${weight}`;
+    pokemonHeight.textContent = `Height: ${height}`;
+    pokemonImage.src = sprites.front_default;
+    pokemonImage.alt = `image of ${name}`;
+    typeContainer.innerHTML = '';
+    types.forEach((item) => {
+        const span = document.createElement('span');
+        span.classList.add('types', `${item.type.name}`);
+        span.textContent = `${item.type.name}`;
+        typeContainer.append(span);
+    });
+    pokemonHp.textContent = stats[0].base_stat;
+    pokemonAttack.textContent = stats[1].base_stat;
+    pokemonDefense.textContent = stats[2].base_stat;
+    pokemonSpAttack.textContent = stats[3].base_stat;
+    pokemonSpDefense.textContent = stats[4].base_stat;
+    pokemonSpeed.textContent = stats[5].base_stat;
+};
+
+// EVENT LISTENERS
+searchForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    checkInput();
+});
+
+searchInput.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        checkInput();
+    };
+});
+
+** end of undefined **
+

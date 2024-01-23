@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon Search App</title>
+    <link rel="stylesheet" href="my-pokémon-search-app.css">
+</head>
+
+<body>
+    <main id="container">
+
+        <section id="logo-container" class="hidden">
+            <img id="logo" src="https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg"
+                alt="freeCodeCamp logo">
+        </section>
+
+        <section id="title-container">
+            <h1 id="title">Pokémon Search App</h1>
+        </section>
+
+        <section id="app-container">
+            <form id="search-container">
+                <label id="search-label" for="search-input">Search for Pokémon Name or ID:</label>
+                <input id="search-input" type="text" required></input>
+                <button id="search-button" type="submit">Search</button>
+            </form>
+            <div id="result-container">
+                <div id="result-container-name">
+                    <p id="pokemon-name"></p>
+                    <p id="pokemon-id"></p>
+                </div>
+                <div id="result-container-size">
+                    <p id="weight"></p>
+                    <p id="height"></p>
+                </div>
+                <div id="result-container-img">
+                    <img id="sprite" src="" alt="">
+                </div>
+                <div id="types">
+                </div>
+            </div>
+            <div id="stats-container">
+                <div id="stats-left">
+                    <span><strong>Base</strong></span>
+                    <span>Hp:</span>
+                    <span>Attack:</span>
+                    <span>Defense:</span>
+                    <span>Sp. Attack:</span>
+                    <span>Sp. Defense:</span>
+                    <span>Speed:</span>
+                </div>
+                <div id="stats-right">
+                    <span><strong>Stats</strong></span>
+                    <span id="hp">0</span>
+                    <span id="attack">0</span>
+                    <span id="defense">0</span>
+                    <span id="special-attack">0</span>
+                    <span id="special-defense">0</span>
+                    <span id="speed">0</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <script src="my-pokémon-search-app.js"></script>
+</body>
+
+</html>
