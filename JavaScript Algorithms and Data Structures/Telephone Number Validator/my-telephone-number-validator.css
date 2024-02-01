@@ -1,140 +1,141 @@
 *,
 ::before,
 ::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    background-color: #3B3B4F;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: #0A0A23;
+  background: linear-gradient(to right, #434343 0%, black 100%);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #0a0a23;
 }
 
 #container {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #logo-container {
-    width: min(100vw, 275px);
-    margin-top: 40px;
-    display: flex;
+  width: min(100vw, 275px);
+  margin-top: 40px;
+  display: flex;
 }
 
 #logo {
-    width: 100%;
+  width: 100%;
 }
 
 #title-container {
-    width: min(100vw, 450px);
-    margin-top: 40px;
+  width: min(100vw, 450px);
+  margin-top: 40px;
 }
 
 #title {
-    color: white;
-    text-align: center;
-    font-size: 2rem;
+  color: white;
+  text-align: center;
+  font-size: 2rem;
 }
 
 #phone-container {
-    margin-top: 40px;
-    width: min(100vw, 450px);
-    display: flex;
-    justify-content: center;
+  margin-top: 40px;
+  width: min(100vw, 450px);
+  display: flex;
+  justify-content: center;
 }
 
 #phone {
-    width: 250px;
-    height: 450px;
-    background-color: #000;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    padding: 0 15px;
+  width: 250px;
+  height: 450px;
+  background-color: #000;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 0 15px;
+  margin-bottom: 20px;
 }
 
 #phone-camera-container {
-    height: 10%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #phone-camera {
-    background-color: #FFF;
-    height: 24%;
-    width: 5%;
-    border-radius: 50px;
+  background-color: #fff;
+  height: 24%;
+  width: 5%;
+  border-radius: 50px;
 }
 
 #phone-screen {
-    background-color: #DFDFE2;
-    height: 80%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 5px;
+  background-color: #dfdfe2;
+  height: 80%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
 }
 
 #label {
-    margin-top: 10px;
-    text-align: center;
+  margin-top: 10px;
+  text-align: center;
 }
 
 #user-input {
-    margin-top: 10px;
-    text-align: center;
-    width: 90%;
-    padding: 10px;
-    border-radius: 10px;
-    border: 1px solid #000;
-    font-size: 1.1rem;
+  margin-top: 10px;
+  text-align: center;
+  width: 90%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #000;
+  font-size: 1.1rem;
 }
 
 #results-div {
-    margin-top: 20px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    overflow: auto;
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
 }
 
 .results-text {
-    padding: 10px 5px;
-    font-size: 1.2rem;
-    text-align: center;
+  padding: 10px 5px;
+  font-size: 1.2rem;
+  text-align: center;
 }
 
 #phone-buttons {
-    height: 10%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+  height: 10%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .btn {
-    height: 60%;
-    width: 40%;
-    font-size: 1.1rem;
-    color: #FFF;
-    background-color: rgb(20, 20, 20);
-    border: none;
-    border-radius: 5px;
+  height: 60%;
+  width: 40%;
+  font-size: 1.1rem;
+  color: #fff;
+  background-color: rgb(20, 20, 20);
+  border: none;
+  border-radius: 5px;
 }
 
 .btn:hover {
-    background-color: rgb(60, 60, 60);
+  background-color: rgb(60, 60, 60);
 }
 
 .btn:focus {
-    outline: none;
+  outline: none;
 }
 
 .hidden {
-    display: none !important;
+  display: none !important;
 }
