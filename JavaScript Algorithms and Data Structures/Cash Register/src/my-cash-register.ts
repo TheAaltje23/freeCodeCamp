@@ -62,7 +62,7 @@ const checkInput = (): void => {
 
 interface ResultItem {
   status: "INSUFFICIENT_FUNDS" | "CLOSED" | "OPEN";
-  change: any[];
+  change: CurrencyItem[];
 }
 
 const checkCashRegister = (
@@ -74,7 +74,7 @@ const checkCashRegister = (
     (sum: number, category: CurrencyItem) => sum + category[1],
     0
   );
-  const resultChange: any[] = [];
+  const resultChange: CurrencyItem[] = [];
   const changeDif: number = cash - price;
   let change: number = cash - price;
 
